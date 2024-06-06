@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
     })
 
     Teacher.associate = function(models) {
-        Teacher.belongsTo(models.User)
+        Teacher.belongsTo(models.User, { foreignKey: 'userId', as: 'user' })
     }
 
     return Teacher

@@ -26,10 +26,10 @@ module.exports = (sequelize, DataTypes) => {
     })
 
     User.associate = function(models) {
-        User.hasMany(models.School, {foreignKey: 'userId'})
-        User.hasMany(models.Teacher, {foreignKey: 'userId'})
-        User.hasMany(models.Student, {foreignKey: 'userId'})
-        User.hasMany(models.Guardian, {foreignKey: 'userId'})
+        User.hasMany(models.School, {foreignKey: 'userId', as:'school'})
+        User.hasMany(models.Teacher, {foreignKey: 'userId', as:'teacher'})
+        User.hasMany(models.Student, {foreignKey: 'userId', as:'student'})
+        User.hasMany(models.Guardian, {foreignKey: 'userId', as:'guardian'})
     }
 
     return User

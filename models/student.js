@@ -42,8 +42,8 @@ module.exports = (sequelize, DataTypes) => {
     })
 
     Student.associate = function(models) {
-        Student.belongsTo(models.User)
-        Student.belongsTo(models.Guardian)
+        Student.belongsTo(models.User, { foreignKey: 'userId', as: 'user' })
+        Student.belongsTo(models.Guardian, { foreignKey: 'guardianId', as: 'guardian'})
     }
 
     return Student

@@ -34,8 +34,8 @@ module.exports = (sequelize, DataTypes) => {
     })
 
     Guardian.associate = function(models) {
-        Guardian.belongsTo(models.User)
-        Guardian.hasOne(models.Student, { foreignKey: 'guardianId'})
+        Guardian.belongsTo(models.User, { foreignKey: 'userId', as: 'user'})
+        Guardian.hasOne(models.Student, { foreignKey: 'guardianId', as: 'student'})
     }
 
     return Guardian
