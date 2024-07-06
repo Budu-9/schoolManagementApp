@@ -34,15 +34,16 @@ class BaseService {
     }
 
     // Find user by ID
-    async getById(id) {
+    async getById(id, options = {}) {
         try {
-            const record = await this.model.findByPk(id)
+            const record = await this.model.findByPk(id, options)
             if(!record) {
                 throw new Error('Record not found')
             }
             return record
         } catch (error) {
-            throw new Error('Error fetching record', error)
+            console.error('Error fetching record', error)
+            throw new Error('Error fetching record', error) 
         }
     }
 
@@ -95,3 +96,5 @@ class BaseService {
         }
     }
 }
+
+module.exports = BaseService
