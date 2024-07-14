@@ -1,5 +1,5 @@
 const GuardianService = require('../services/GuardianService')
-const guardianConstraint = require('../constraints/guardianConstraint')
+const guardianConstraint = require('../constraints/GuardianConstraint')
 const validate = require('validate.js')
 
 class GuardianController {

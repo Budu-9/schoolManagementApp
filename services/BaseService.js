@@ -9,7 +9,7 @@ class BaseService {
             const record = await this.model.create(data)
             return record
         } catch (error) {
-            throw new Error('Error creating record', error)
+            throw new Error(`Error creating record: ${error.message}`)
         }
     }
 
@@ -19,7 +19,7 @@ class BaseService {
             const records = await this.model.bulkCreate(dataArray)
             return records
         } catch (error) {
-            throw new Error('Error creating records', error)
+            throw new Error(`Error creating records: ${error.message}`)
         }
     }
 
@@ -29,7 +29,7 @@ class BaseService {
             const records = await this.model.findAll()
             return records
         } catch (error) {
-            throw new Error('Error fetching records', error)
+            throw new Error(`Error fetching records: ${error.message}`)
         }
     }
 
@@ -42,8 +42,8 @@ class BaseService {
             }
             return record
         } catch (error) {
-            console.error('Error fetching record', error)
-            throw new Error('Error fetching record', error) 
+            console.log('Error fetching record', error)
+            throw new Error(`Error fetching record: ${error.message}`)  
         }
     }
 
@@ -57,7 +57,7 @@ class BaseService {
             await record.update(data)
             return record
         } catch (error) {
-            throw new Error('Error updating record', error)
+            throw new Error(`Error updating record: ${error.message}`)
         }
     }
 
@@ -79,7 +79,7 @@ class BaseService {
             }
             return updatedRecords
         } catch (error) {
-            throw new Error('Error updating records', error)
+            throw new Error(`Error updating records: ${error.message}`)
         }
     }
 
@@ -92,7 +92,7 @@ class BaseService {
             await record.destroy()
             return { message: 'Record deleted successfully'}
         } catch (error) {
-            throw new Error('Error deleting record', error)
+            throw new Error(`Error deleting record: ${error.message}`)
         }
     }
 }

@@ -1,6 +1,5 @@
-const validate = require('validate.js')
 
-const teacherConstraints = {
+const studentConstraints = {
     username: {
         presence: true,
         length: {
@@ -24,7 +23,14 @@ const teacherConstraints = {
             onlyInteger: true,
             greaterThan: 0
         }
+    },
+    guardianId: {
+        presence: true,
+        numericality: {
+            onlyInteger: true,
+            greaterThan: 0
+        }
     }
 }
 
-module.exports = teacherConstraints
+module.exports = studentConstraints

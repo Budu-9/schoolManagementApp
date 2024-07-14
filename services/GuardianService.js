@@ -7,4 +7,4 @@ class GuardianService extends BaseService {
     }
 }
 
-module.exports = new GuardianService()
+module.exports = GuardianService

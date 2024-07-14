@@ -1,5 +1,5 @@
 const TeacherService = require('../services/TeacherService')
-const teacherConstraint = require('../constraints/teacherConstraint')
+const teacherConstraint = require('../constraints/TeacherConstraint')
 const validate = require('validate.js')
 
 class TeacherController {

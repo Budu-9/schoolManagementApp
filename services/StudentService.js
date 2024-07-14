@@ -6,4 +6,4 @@ class StudentService extends BaseService {
         super(Student)
     }
 }
-module.exports = new StudentService()
+module.exports = StudentService

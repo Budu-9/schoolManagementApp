@@ -1,10 +1,9 @@
-const validate = require('validate.js')
 
-const userConstraints = {
+const guardianConstraints = {
     username: {
         presence: true,
         length: {
-            minimum: 4,
+            minimum: 3,
             maximum: 20
         }
     },
@@ -17,7 +16,14 @@ const userConstraints = {
         length: {
             minimum: 6
         }
+    },
+    userId: {
+        presence: true,
+        numericality: {
+            onlyInteger: true,
+            greaterThan: 0
+        }
     }
 }
 
-module.exports = userConstraints
+module.exports = guardianConstraints

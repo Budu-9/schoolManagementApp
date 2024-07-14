@@ -6,4 +6,4 @@ class SchoolService extends BaseService {
         super(School)
     }
 }
-module.exports = new SchoolService()
+module.exports = SchoolService

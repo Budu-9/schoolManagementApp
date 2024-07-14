@@ -1,5 +1,5 @@
 const UserService = require('../services/UserService')
-const userConstraint = require('../constraints/userConstraint')
+const userConstraint = require('../constraints/UserConstraint')
 const validate = require('validate.js')
 
 class UserController {

@@ -7,4 +7,4 @@ class TeacherService extends BaseService {
     }
 }
 
-module.exports = new TeacherService()
+module.exports = TeacherService
